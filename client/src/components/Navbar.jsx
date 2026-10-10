@@ -25,6 +25,11 @@ export default function Navbar() {
 
           {loading ? null : user ? (
             <>
+              {user.role === "admin" && (
+                <Link to="/admin" className="text-sm font-medium hover:text-pink-600">
+                  Admin
+                </Link>
+              )}
               <Link to="/orders" className="text-sm font-medium hover:text-pink-600">
                 My Orders
               </Link>
@@ -48,11 +53,6 @@ export default function Navbar() {
                 Sign up
               </Link>
             </>
-          )}
-          {user.role === "admin" && (
-            <Link to="/admin" className="text-sm font-medium hover:text-pink-600">
-              Admin
-            </Link>
           )}
         </div>
       </nav>

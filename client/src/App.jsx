@@ -12,6 +12,8 @@ import Checkout from "./pages/Checkout";
 import Orders from "./pages/Orders";
 import OrderDetails from "./pages/OrderDetails";
 import Admin from "./pages/Admin"; 
+import NotFound from "./pages/NotFound";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
@@ -47,6 +49,7 @@ export default function App() {
                 <Route path="*" element={<p>Page not found</p>} />
               </Routes>
             </main>
+            <Footer />
           </div>
         </CartProvider>
       </AuthProvider>
