@@ -46,7 +46,7 @@ export default function App() {
                 element={<ProtectedRoute adminOnly><Admin /></ProtectedRoute>}
                 />
                 
-                <Route path="*" element={<p>Page not found</p>} />
+                <Route path="*" element={<NotFound />} />
               </Routes>
             </main>
             <Footer />
