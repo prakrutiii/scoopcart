@@ -6,6 +6,7 @@ import {
   cancelOrder,
   getAllOrders,
   updateOrderStatus,
+  getOrderStats,
 } from "../controllers/orderController.js";
 import { protect, adminOnly } from "../middleware/authMiddleware.js";
 
@@ -17,6 +18,7 @@ router
   .get(protect, adminOnly, getAllOrders);
 
 router.get("/myorders", protect, getMyOrders);
+router.get("/stats", protect, adminOnly, getOrderStats);
 
 router.route("/:id").get(protect, getOrderById);
 router.put("/:id/cancel", protect, cancelOrder);

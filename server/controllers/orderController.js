@@ -192,3 +192,35 @@ export const updateOrderStatus = asyncHandler(async (req, res) => {
   const updated = await order.save();
   res.json(updated);
 });
+
+export const getOrderStats = asyncHandler(async (req, res) => {
+  const [totals] = await Order.aggregate([
+    { $match: { status: { $ne: "Cancelled" } } },
+    { $group: { _id: null, revenue: { $sum: "$totalPrice" }, orders: { $sum: 1 } } },
+  ]);
+
+  const byStatus = await Order.aggregate([
+    { $group: { _id: "$status", count: { $sum: 1 } } },
+  ]);
+
+  const topProducts = await Order.aggregate([
+    { $match: { status: { $ne: "Cancelled" } } },
+    { $unwind: "$items" },
+    {
+      $group: {
+        _id: "$items.name",
+        quantity: { $sum: "$items.quantity" },
+        revenue: { $sum: { $multiply: ["$items.price", "$items.quantity"] } },
+      },
+    },
+    { $sort: { quantity: -1 } },
+    { $limit: 5 },
+  ]);
+
+  res.json({
+    revenue: totals?.revenue || 0,
+    orders: totals?.orders || 0,
+    byStatus: Object.fromEntries(byStatus.map((s) => [s._id, s.count])),
+    topProducts,
+  });
+});

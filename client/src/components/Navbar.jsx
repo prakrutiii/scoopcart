@@ -49,6 +49,11 @@ export default function Navbar() {
               </Link>
             </>
           )}
+          {user.role === "admin" && (
+            <Link to="/admin" className="text-sm font-medium hover:text-pink-600">
+              Admin
+            </Link>
+          )}
         </div>
       </nav>
     </header>

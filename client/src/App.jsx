@@ -11,6 +11,7 @@ import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import Orders from "./pages/Orders";
 import OrderDetails from "./pages/OrderDetails";
+import Admin from "./pages/Admin"; 
 
 export default function App() {
   return (
@@ -38,6 +39,11 @@ export default function App() {
                   path="/orders/:id"
                   element={<ProtectedRoute><OrderDetails /></ProtectedRoute>}
                 />
+                <Route
+                path="/admin"
+                element={<ProtectedRoute adminOnly><Admin /></ProtectedRoute>}
+                />
+                
                 <Route path="*" element={<p>Page not found</p>} />
               </Routes>
             </main>
