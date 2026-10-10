@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import { useCart } from "../context/CartContext";
 
 export default function Navbar() {
   const { user, loading, logout } = useAuth();
+  const { itemCount } = useCart();
 
   return (
     <header className="bg-white shadow-sm">
@@ -12,6 +14,15 @@ export default function Navbar() {
         </Link>
 
         <div className="flex items-center gap-4">
+          <Link to="/cart" className="relative text-sm font-medium hover:text-pink-600">
+            🛒 Cart
+            {itemCount > 0 && (
+              <span className="absolute -top-2 -right-4 bg-pink-600 text-white text-xs rounded-full px-1.5">
+                {itemCount}
+              </span>
+            )}
+          </Link>
+
           {loading ? null : user ? (
             <>
               <span className="text-sm text-gray-600">Hi, {user.name}</span>
