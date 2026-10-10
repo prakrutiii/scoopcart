@@ -8,12 +8,12 @@ export default function Navbar() {
 
   return (
     <header className="bg-white shadow-sm">
-      <nav className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <nav className="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-y-2">
         <Link to="/" className="text-2xl font-bold text-pink-600">
           ScoopCart 🍦
         </Link>
 
-        <div className="flex items-center gap-4">
+        <div className="flex flex-wrap items-center gap-4">
           <Link to="/cart" className="relative text-sm font-medium hover:text-pink-600">
             🛒 Cart
             {itemCount > 0 && (
@@ -25,6 +25,9 @@ export default function Navbar() {
 
           {loading ? null : user ? (
             <>
+              <Link to="/orders" className="text-sm font-medium hover:text-pink-600">
+                My Orders
+              </Link>
               <span className="text-sm text-gray-600">Hi, {user.name}</span>
               <button
                 onClick={logout}

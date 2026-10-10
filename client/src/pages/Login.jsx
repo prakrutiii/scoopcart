@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 export default function Login() {
   const { login } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
   const [form, setForm] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
   const [submitting, setSubmitting] = useState(false);
@@ -18,7 +19,7 @@ export default function Login() {
     setSubmitting(true);
     try {
       await login(form.email, form.password);
-      navigate("/");
+      navigate(location.state?.from || "/");
     } catch (err) {
       setError(err.response?.data?.message || "Login failed");
     } finally {
