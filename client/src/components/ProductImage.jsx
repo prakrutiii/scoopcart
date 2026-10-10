@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const emojiByCategory = {
   Classic: "🍦",
   Chocolate: "🍫",
@@ -13,11 +15,15 @@ const bgByCategory = {
 };
 
 export default function ProductImage({ product, className = "h-40", emojiSize = "text-6xl" }) {
-  if (product.image) {
+  const [failedSrc, setFailedSrc] = useState(null);
+
+  if (product.image && failedSrc !== product.image) {
     return (
       <img
         src={product.image}
         alt={product.name}
+        loading="lazy"
+        onError={() => setFailedSrc(product.image)}
         className={`${className} w-full object-cover`}
       />
     );
