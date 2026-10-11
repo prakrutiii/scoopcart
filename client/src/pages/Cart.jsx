@@ -12,7 +12,7 @@ export default function Cart() {
         <h2 className="text-2xl font-bold">Your cart is empty</h2>
         <Link
           to="/"
-          className="inline-block mt-4 bg-pink-600 text-white px-5 py-2 rounded-lg hover:bg-pink-700"
+          className="inline-block mt-4 bg-strawberry text-white px-5 py-2 rounded-lg hover:bg-strawberry-dark"
         >
           Browse flavors
         </Link>
@@ -22,7 +22,7 @@ export default function Cart() {
 
   return (
     <div className="max-w-3xl mx-auto">
-      <h1 className="text-2xl font-bold text-pink-600 mb-6">Your Cart</h1>
+      <h1 className="text-2xl font-bold text-strawberry mb-6">Your Cart</h1>
 
       <div className="bg-white rounded-xl shadow-sm divide-y">
         {items.map((item) => (
@@ -39,14 +39,14 @@ export default function Cart() {
             <div className="flex items-center gap-2">
               <button
                 onClick={() => updateQuantity(item.product, item.quantity - 1)}
-                className="w-8 h-8 rounded border hover:border-pink-400"
+                className="w-8 h-8 rounded border hover:border-strawberry"
               >
                 −
               </button>
               <span className="w-6 text-center">{item.quantity}</span>
               <button
                 onClick={() => updateQuantity(item.product, item.quantity + 1)}
-                className="w-8 h-8 rounded border hover:border-pink-400"
+                className="w-8 h-8 rounded border hover:border-strawberry"
               >
                 +
               </button>
@@ -70,7 +70,7 @@ export default function Cart() {
         <p className="text-xl font-bold">Total: ₹{subtotal}</p>
         <Link
           to="/checkout"
-          className="bg-pink-600 text-white px-6 py-2.5 rounded-lg font-medium hover:bg-pink-700"
+          className="bg-strawberry text-white px-6 py-2.5 rounded-lg font-medium hover:bg-strawberry-dark"
         >
           Proceed to checkout
         </Link>

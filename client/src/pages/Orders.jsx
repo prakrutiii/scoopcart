@@ -31,7 +31,7 @@ export default function Orders() {
 
   return (
     <div className="max-w-3xl mx-auto">
-      <h1 className="text-2xl font-bold text-pink-600 mb-6">My Orders</h1>
+      <h1 className="text-2xl font-bold text-strawberry mb-6">My Orders</h1>
 
       {error && (
         <p className="mb-4 rounded bg-red-100 text-red-700 px-3 py-2 text-sm">{error}</p>
@@ -40,7 +40,7 @@ export default function Orders() {
       {orders.length === 0 && !error ? (
         <div className="text-center py-12">
           <p className="text-gray-600">You haven't placed any orders yet.</p>
-          <Link to="/" className="text-pink-600 hover:underline">Browse flavors</Link>
+          <Link to="/" className="text-strawberry hover:underline">Browse flavors</Link>
         </div>
       ) : (
         <div className="space-y-4">

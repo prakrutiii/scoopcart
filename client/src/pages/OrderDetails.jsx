@@ -52,7 +52,7 @@ export default function OrderDetails() {
     return (
       <div className="text-center py-10">
         <p className="text-red-600">{error || "Order not found"}</p>
-        <Link to="/orders" className="text-pink-600 hover:underline">Back to my orders</Link>
+        <Link to="/orders" className="text-strawberry hover:underline">Back to my orders</Link>
       </div>
     );
   }
@@ -62,13 +62,22 @@ export default function OrderDetails() {
 
   return (
     <div className="max-w-3xl mx-auto">
-      {justPlaced && (
+      {/* {justPlaced && (
         <div className="mb-6 rounded-xl bg-green-100 text-green-800 px-4 py-3">
           🎉 Order placed successfully! Thank you for ordering.
         </div>
+      )} */}
+      {justPlaced && (
+        <div className="mb-6 rounded-[2rem] bg-blush text-center py-6 px-4">
+          <h2 className="font-display text-3xl font-bold text-strawberry">Thank you! 🎉</h2>
+          <p className="mt-1">Your order has been placed.</p>
+          <div className="relative h-12 mt-4 overflow-hidden">
+            <span className="absolute top-0 text-4xl animate-ride">🛵</span>
+          </div>
+        </div>
       )}
 
-      <Link to="/orders" className="text-sm text-pink-600 hover:underline">
+      <Link to="/orders" className="text-sm text-strawberry hover:underline">
         ← My orders
       </Link>
 
@@ -89,7 +98,7 @@ export default function OrderDetails() {
               <div key={s} className="flex-1 flex flex-col items-center text-center">
                 <div
                   className={`w-4 h-4 rounded-full ${
-                    i <= currentStep ? "bg-pink-600" : "bg-gray-300"
+                    i <= currentStep ? "bg-strawberry" : "bg-gray-300"
                   }`}
                 />
                 <span className="text-xs mt-1 text-gray-600">{s}</span>

@@ -76,8 +76,8 @@ export default function AdminOrders() {
             onClick={() => setFilter(f)}
             className={`px-4 py-1.5 rounded-full text-sm font-medium border ${
               filter === f
-                ? "bg-pink-600 text-white border-pink-600"
-                : "bg-white text-gray-700 hover:border-pink-400"
+                ? "bg-strawberry text-white border-strawberry"
+                : "bg-white text-gray-700 hover:border-strawberry"
             }`}
           >
             {f}
@@ -125,7 +125,7 @@ export default function AdminOrders() {
                     <button
                       onClick={() => advance(order)}
                       disabled={busyId === order._id}
-                      className="bg-pink-600 text-white text-sm px-4 py-1.5 rounded-lg hover:bg-pink-700 disabled:opacity-60"
+                      className="bg-strawberry text-white text-sm px-4 py-1.5 rounded-lg hover:bg-strawberry-dark disabled:opacity-60"
                     >
                       Mark as {nextStatus[order.status]}
                     </button>

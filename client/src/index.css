@@ -111,5 +111,88 @@ code {
   background: var(--code-bg);
 } */
 
-
 @import "tailwindcss";
+
+@theme {
+  --color-strawberry: #e8508a;
+  --color-strawberry-dark: #c93c73;
+  --color-blush: #f8d7e0;
+  /* --color-sky: #fff6dc; */
+  --color-sky: #e0f4ff;
+  --color-choco: #5b3a29;
+  --color-mint: #bde8d2;
+  --color-blueberry: #8fa8e8;
+
+  --font-display: "Fredoka", ui-rounded, system-ui, sans-serif;
+  --font-script: "Pacifico", cursive;
+  --font-body: "Nunito", system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-body);
+    background-color: var(	--color-sky);
+    color: var(--color-choco);
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+  }
+}
+
+@keyframes wobble {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-3deg); }
+  75% { transform: rotate(3deg); }
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+@keyframes drive {
+  0% { transform: translateX(-120%); }
+  100% { transform: translateX(120%); }
+}
+
+.hover-wobble:hover {
+  animation: wobble 0.5s ease-in-out;
+}
+
+.animate-pop {
+  animation: pop 0.35s ease-out;
+}
+
+.animate-drive {
+  animation: drive 4s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-4deg); }
+  50% { transform: translateY(-14px) rotate(4deg); }
+}
+
+@keyframes ride {
+  from { left: 100%; }
+  to { left: -3rem; }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-ride {
+  animation: ride 5s linear infinite;
+}

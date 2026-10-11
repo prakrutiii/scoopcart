@@ -5,7 +5,7 @@ import { useAuth } from "../context/AuthContext";
 import { useCart } from "../context/CartContext";
 
 const inputClass =
-  "w-full border rounded-lg px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-pink-300";
+  "w-full border rounded-lg px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-strawberry/40";
 
 export default function Checkout() {
   const { user } = useAuth();
@@ -27,7 +27,7 @@ export default function Checkout() {
         <p className="text-gray-600">Your cart is empty.</p>
         <Link
           to="/"
-          className="inline-block mt-4 bg-pink-600 text-white px-5 py-2 rounded-lg hover:bg-pink-700"
+          className="inline-block mt-4 bg-strawberry text-white px-5 py-2 rounded-lg hover:bg-strawberry-dark"
         >
           Browse flavors
         </Link>
@@ -70,7 +70,7 @@ export default function Checkout() {
 
   return (
     <div className="max-w-5xl mx-auto">
-      <h1 className="text-2xl font-bold text-pink-600 mb-6">Checkout</h1>
+      <h1 className="text-2xl font-bold text-strawberry mb-6">Checkout</h1>
 
       <div className="grid md:grid-cols-3 gap-6">
         <form
@@ -106,7 +106,7 @@ export default function Checkout() {
           <button
             type="submit"
             disabled={submitting}
-            className="w-full bg-pink-600 text-white py-2.5 rounded-lg font-medium hover:bg-pink-700 disabled:opacity-60"
+            className="w-full bg-strawberry text-white py-2.5 rounded-lg font-medium hover:bg-strawberry-dark disabled:opacity-60"
           >
             {submitting ? "Placing order..." : "Place order"}
           </button>

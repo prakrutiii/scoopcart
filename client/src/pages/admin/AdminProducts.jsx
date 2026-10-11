@@ -12,7 +12,7 @@ const emptyForm = {
   isAvailable: true,
 };
 const inputClass =
-  "w-full border rounded-lg px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-pink-300";
+  "w-full border rounded-lg px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-strawberry/40";
 
 export default function AdminProducts() {
   const [products, setProducts] = useState([]);
@@ -144,7 +144,7 @@ export default function AdminProducts() {
           <button
             type="submit"
             disabled={saving}
-            className="bg-pink-600 text-white px-5 py-2 rounded-lg font-medium hover:bg-pink-700 disabled:opacity-60"
+            className="bg-strawberry text-white px-5 py-2 rounded-lg font-medium hover:bg-strawberry-dark disabled:opacity-60"
           >
             {saving ? "Saving..." : editingId ? "Update flavor" : "Add flavor"}
           </button>
@@ -185,7 +185,7 @@ export default function AdminProducts() {
                   <td className="p-3">{p.isAvailable ? "Yes" : "No"}</td>
                   <td className="p-3 whitespace-nowrap">
                     <button onClick={() => startEdit(p)}
-                      className="text-pink-600 hover:underline mr-3">Edit</button>
+                      className="text-strawberry hover:underline mr-3">Edit</button>
                     <button onClick={() => handleDelete(p)}
                       className="text-red-600 hover:underline">Delete</button>
                   </td>

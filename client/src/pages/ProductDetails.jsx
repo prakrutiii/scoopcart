@@ -36,7 +36,7 @@ export default function ProductDetails() {
     return (
       <div className="text-center py-10">
         <p className="text-red-600">{error || "Product not found"}</p>
-        <Link to="/" className="text-pink-600 hover:underline">Back to flavors</Link>
+        <Link to="/" className="text-strawberry hover:underline">Back to flavors</Link>
       </div>
     );
 
@@ -50,7 +50,7 @@ export default function ProductDetails() {
 
   return (
     <div className="max-w-4xl mx-auto">
-      <Link to="/" className="text-sm text-pink-600 hover:underline">
+      <Link to="/" className="text-sm text-strawberry hover:underline">
         ← Back to flavors
       </Link>
 
@@ -60,7 +60,7 @@ export default function ProductDetails() {
         </div>
 
         <div className="p-6 md:w-1/2 flex flex-col">
-          <span className="text-xs font-medium text-pink-600">{product.category}</span>
+          <span className="text-xs font-medium text-strawberry">{product.category}</span>
           <h1 className="text-2xl font-bold mt-1">{product.name}</h1>
           <p className="text-gray-600 mt-3">{product.description}</p>
           <p className="text-3xl font-bold mt-4">₹{product.price}</p>
@@ -89,7 +89,7 @@ export default function ProductDetails() {
 
               <button
                 onClick={handleAdd}
-                className="mt-6 bg-pink-600 text-white py-2.5 rounded-lg font-medium hover:bg-pink-700"
+                className="mt-6 bg-strawberry text-white py-2.5 rounded-lg font-medium hover:bg-strawberry-dark"
               >
                 Add to cart
               </button>

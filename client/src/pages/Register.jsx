@@ -28,7 +28,7 @@ export default function Register() {
 
   return (
     <div className="max-w-md mx-auto bg-white p-8 rounded-xl shadow">
-      <h2 className="text-2xl font-bold text-pink-600 mb-6">Create account</h2>
+      <h2 className="text-2xl font-bold text-strawberry mb-6">Create account</h2>
 
       {error && (
         <p className="mb-4 rounded bg-red-100 text-red-700 px-3 py-2 text-sm">
@@ -44,7 +44,7 @@ export default function Register() {
           value={form.name}
           onChange={handleChange}
           required
-          className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-300"
+          className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-strawberry/40"
         />
         <input
           type="email"
@@ -53,7 +53,7 @@ export default function Register() {
           value={form.email}
           onChange={handleChange}
           required
-          className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-300"
+          className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-strawberry/40"
         />
         <input
           type="password"
@@ -63,12 +63,12 @@ export default function Register() {
           onChange={handleChange}
           required
           minLength={6}
-          className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-300"
+          className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-strawberry/40"
         />
         <button
           type="submit"
           disabled={submitting}
-          className="w-full bg-pink-600 text-white py-2 rounded-lg font-medium hover:bg-pink-700 disabled:opacity-60"
+          className="w-full bg-strawberry text-white py-2 rounded-lg font-medium hover:bg-strawberry-dark disabled:opacity-60"
         >
           {submitting ? "Creating account..." : "Sign up"}
         </button>
@@ -76,7 +76,7 @@ export default function Register() {
 
       <p className="mt-4 text-sm text-gray-600">
         Already have an account?{" "}
-        <Link to="/login" className="text-pink-600 hover:underline">
+        <Link to="/login" className="text-strawberry hover:underline">
           Login
         </Link>
       </p>

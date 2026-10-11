@@ -20,7 +20,7 @@ export default function App() {
     <BrowserRouter>
       <AuthProvider>
         <CartProvider>
-          <div className="min-h-screen bg-pink-50 text-gray-800">
+          <div className="min-h-screen bg-sky text-choco">
             <Navbar />
             <main className="max-w-6xl mx-auto px-4 py-8">
               <Routes>
