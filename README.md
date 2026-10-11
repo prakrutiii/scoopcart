@@ -3,7 +3,6 @@
 A full-stack online ice cream ordering platform built with the MERN stack. Customers browse flavors, build a cart and place orders. Admins manage flavors, track orders and view sales analytics.
 
 **🔗 Live demo:** https://scoopcart.vercel.app
-**⚠️ Note:** The backend runs on a free tier and may take up to a minute to wake up on the first visit.
 
 ![Home](docs/screenshots/home.png)
 
@@ -110,7 +109,7 @@ In a second terminal:
     npm install
     npm run dev
 
-Open http://localhost:5173. To try admin features, set a user's `role` to `admin` in the database.
+
 
 ### Environment variables (`server/.env`)
 
