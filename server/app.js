@@ -20,7 +20,7 @@ app.use(cookieParser());
 
 const authLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
-  limit: process.env.NODE_ENV === "production" ? 30 : 500,
+  limit: process.env.NODE_ENV === "production" ? 100 : 500,
   standardHeaders: true,
   legacyHeaders: false,
   message: { message: "Too many attempts, please try again later" },
